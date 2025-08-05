@@ -4,8 +4,11 @@ from django.db import models
 class Clientes(models.Model):
     nombre = models.CharField(max_length=30)
     direccion = models.CharField(max_length=50)
-    email = models.EmailField()
+    email = models.EmailField(blank=True, null=True)
     tel = models.CharField(max_length=7)
+
+    def __str__(self):
+        return 'Cliente: "%s" -- Tel: "%s"' %(self.nombre, self.tel)
 
 class Articulos(models.Model):
     nombre = models.CharField(max_length=30)
@@ -13,7 +16,7 @@ class Articulos(models.Model):
     precio = models.IntegerField()
 
     def __str__(self):
-        return 'El nombre es %s de la sección %s con precio de $%s' %(self.nombre, self.seccion, self.precio)
+        return 'Artículo: "%s" -- Sección: "%s" -- Precio: $%s' %(self.nombre, self.seccion, self.precio)
     
 
 
