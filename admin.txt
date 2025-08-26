@@ -6,3 +6,11 @@ Users
 nhey - nhey2505
 
 aleja - Aleja12345+
+
+
+
+Envío correos por terminal
+send_mail('prueba asunto', 'este es el mensaje', 'wilmar.galvis.294@gmail.com', ['wagalvis24@gmail.com'], fail_silently=False)
+
+el primer correo es el que envia
+el segundo correo es quien recibe
